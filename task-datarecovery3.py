@@ -17,7 +17,7 @@ sum_x2 = 0
 coef_a = 0
 coef_b = 0
 
-for i in range (2,n+1):
+for i in range (2,n+2):
     if int(wks.cell(i, 2).value)!=0:
         x.append(int(wks.cell(i, 1).value))
         y.append(int(wks.cell(i, 2).value))
@@ -28,6 +28,6 @@ for i in range (2,n+1):
 coef_a = (n*sum_xy - sum_x * sum_y)/(n * sum_x2 - sum_x**2)
 coef_b = (sum_y - coef_a * sum_x)/n
 
-for i in range (2,n+1):
+for i in range (2,n+2):
     if int(wks.cell(i, 2).value) == 0:
         wks.update_cell(i,2,int(coef_a*int(wks.cell(i, 1).value)+coef_b))
