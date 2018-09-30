@@ -12,15 +12,13 @@ wks = gc.open('Test').sheet1
 
 n = int(input("Введите значение n:"))
 
-nlist = []
+wks.clear()
+wks.append_row(['x','y'])
+for i in range(0,n):
+    wks.append_row([int(random.uniform(1,30)),int(random.uniform(1,30))])
 
-for i in range (0, n):
-    wks.append_row()
-for j in range (0, n):
-    wks.append_row(random.randint(1, 30))
 
-print(nlist)
-wks.append_row(nlist)
+print(wks.get_all_records())
 
 #print(wks.get_all_records())
 
