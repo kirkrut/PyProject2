@@ -10,6 +10,7 @@ wks= client.open("Numbers").sheet1
 x=[]
 y=[]
 n = 10
+n1=0
 sum_xy = 0
 sum_x = 0
 sum_y = 0
@@ -19,14 +20,15 @@ coef_b = 0
 
 for i in range (2,n+2):
     if wks.cell(i, 2).value != '':
+        n1+=1
         x.append(int(wks.cell(i, 1).value))
         y.append(int(wks.cell(i, 2).value))
         sum_xy = sum_xy +int(wks.cell(i, 1).value)*int(wks.cell(i, 2).value)
         sum_x = sum_x + int(wks.cell(i, 1).value)
         sum_y = sum_y + int(wks.cell(i, 2).value)
         sum_x2 = sum_x2 + int(wks.cell(i, 1).value)**2
-coef_a = (n*sum_xy - sum_x * sum_y)/(n * sum_x2 - sum_x**2)
-coef_b = (sum_y - coef_a * sum_x)/n
+coef_a = (n1*sum_xy - sum_x * sum_y)/(n1 * sum_x2 - sum_x**2)
+coef_b = (sum_y - coef_a * sum_x)/n1
 
 for i in range (2,n+2):
     if wks.cell(i, 2).value == '':
