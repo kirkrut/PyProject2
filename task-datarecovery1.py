@@ -16,8 +16,8 @@ i=0
 while i<10:
     x = round(random.uniform(1, 10))
     y = round(random.uniform(1, 10))
-    if int(wks.cell(x,y).value)!=0:
-        wks.update_cell(x,y,0)
+    if wks.cell(x,y).value != '':
+        wks.update_cell(x,y,'')
         i += 1
-    if int(wks.cell(x, y).value)== 0:
+    if wks.cell(x, y).value ==  '':
         continue
